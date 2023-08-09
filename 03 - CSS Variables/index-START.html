@@ -27,7 +27,7 @@
         name="blur"
         min="0"
         max="25"
-        value="10"
+        value="2"
         data-sizing="px"
       />
 
@@ -39,19 +39,19 @@
 
     <style>
       :root {
-        --primary-color: rgb(255, 198, 0);
+        --base: #ffc600;
         --spacing: 10px;
         --blur: 2px;
       }
 
       img {
         padding: var(--spacing);
-        background-color: var(--primary-color);
+        background: var(--base);
         filter: blur(var(--blur));
       }
 
       .hl {
-        color: var(--primary-color);
+        color: var(--base);
       }
 
       /*
@@ -80,9 +80,7 @@
       const inputs = document.querySelectorAll("input");
 
       const handleUpdate = (e) => {
-        console.log(e.target.value);
         const units = e.target.dataset.sizing || "";
-        console.log(units);
         document.documentElement.style.setProperty(
           `--${e.target.name}`,
           e.target.value + units
