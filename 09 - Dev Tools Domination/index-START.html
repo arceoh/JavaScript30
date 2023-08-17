@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Console Tricks!</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "hugo", age: 8 },
+      ];
 
-  <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
 
-    function makeGreen() {
-      const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
-    }
+      // Regular
+      console.log("Hello");
 
-    // Regular
+      // Interpolated
+      console.log("Hello %s", "world");
 
-    // Interpolated
+      // Styled
+      console.log("%c Hello World", "color:red; font-size: 20px");
 
-    // Styled
+      // warning!
+      console.warn("The robots are coming!");
 
-    // warning!
+      // Error :|
+      console.error(
+        "That was an error message. Please disregard. We are watching"
+      );
 
-    // Error :|
+      // Info
+      console.info("Resistance is futile.");
 
-    // Info
+      // Testing
+      console.assert("Robots" > "Humas", "We rule this world.");
 
-    // Testing
+      // clearing
+      // console.clear();
 
-    // clearing
+      // Viewing DOM Elements
+      const p = document.querySelector("p");
+      console.log(p);
+      console.dir(p);
+      console.clear();
 
-    // Viewing DOM Elements
+      // Grouping together
+      dogs.forEach((dog) => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`${dog.name}`);
+        console.log(`${dog.age}`);
+        console.log(`My dog ${dog.name} is the best.`);
+        console.groupEnd(`${dog.name}`);
+      });
 
-    // Grouping together
+      // counting
+      console.count("Hugo");
+      console.count("Hugo");
+      console.count("Not Hugo");
+      console.count("Hugo");
+      console.count("Hugo");
+      console.count("Not Hugo");
+      console.count("Hugo");
+      console.count("Not Hugo");
+      console.count("Not Hugo");
 
-    // counting
-
-    // timing
-
-  </script>
-</body>
+      // timing
+      console.time("Counting");
+      console.groupCollapsed("i");
+      for (let i = 0; i < 100; i++) {
+        console.log(i);
+      }
+      console.groupEnd("i");
+      console.timeEnd("Counting");
+    </script>
+  </body>
 </html>
