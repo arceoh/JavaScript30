@@ -79,3 +79,21 @@ h2 {
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.toggleAllWrapper{
+  margin-top:.4rem;
+  text-align: left;
+}
+.toggleAll{
+  border:none;
+  background: transparent;
+  padding: 2px 5px;
+}
+.toggleAll:hover{
+  cursor: pointer;
+  background-color: #dddddd;
+}
+.toggleAll:active{
+  cursor: pointer;
+  background-color: #aaaaaa;
+  color: white;
+}
